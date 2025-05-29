@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Proxy Viewer</title>
+</head>
+<body>
+  <h2>Proxy Viewer</h2>
+  <input type="text" id="url" placeholder="Enter full URL" style="width: 60%;">
+  <button onclick="loadSite()">Load</button>
+  <iframe id="iframe" width="100%" height="600px" style="margin-top: 10px;"></iframe>
+
+  <script>
+    const proxy = 'https://simple-proxy.onrender.com/proxy?url='; // Replace with your Render link
+
+    function loadSite() {
+      const userUrl = document.getElementById('url').value;
+      const finalUrl = proxy + encodeURIComponent(userUrl);
+      document.getElementById('iframe').src = finalUrl;
+    }
+  </script>
+</body>
+</html>
